@@ -1,11 +1,31 @@
 #!/bin/bash
 
-cd ~/LATS_PRODUCTION
+# LATS P3 TEST
+# Startup Hook V1
+# Recheck first. Runtime starts only if Recheck passes.
 
-gnome-terminal -- bash -c "python3 -m memory_v3.runtime_runner; exec bash"
+cd ~/LATS_PRODUCTION_P3_TEST || exit 1
 
-gnome-terminal -- bash -c "watch -n 30 'tail -n 20 logs/memory_v3/runtime.log'; exec bash"
+echo "================================================================================"
+echo "LATS P3 TEST STARTUP HOOK V1"
+echo "================================================================================"
 
-gnome-terminal -- bash -c "./sync_runtime_backup.sh; exec bash"
+echo "[STEP 1] Run One Click Recheck Room"
+python3 runtime/recheck_room/one_click_recheck.py
 
-gnome-terminal -- bash -c "top; exec bash"
+RECHECK_STATUS=$?
+
+echo "================================================================================"
+echo "Recheck exit code: $RECHECK_STATUS"
+echo "================================================================================"
+
+if [ "$RECHECK_STATUS" -ne 0 ]; then
+    echo "RUN BLOCKED"
+    echo "Reason: Recheck failed or backfill required"
+    echo "Action: Review runtime/recheck reports"
+    exit 1
+fi
+
+echo "RECHECK PASS"
+echo "[STEP 2] Start Memory Runtime Runner"
+python3 runtime/memory_runtime_runner.py

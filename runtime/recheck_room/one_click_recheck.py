@@ -173,6 +173,9 @@ def main():
     if final_status == "FAIL":
         raise SystemExit(1)
 
+    if final_status == "PASS_WITH_REPAIR_REQUIRED":
+        raise SystemExit(2)
+
 
 if __name__ == "__main__":
     main()
