@@ -1,0 +1,48 @@
+{
+  "schema": "lats_p3_recheck_report_v1",
+  "created_at": "2026-06-05T08:27:34",
+  "final_status": "PASS",
+  "rules": {
+    "memory_read_only": true,
+    "no_hit_count_update": true,
+    "no_candidate_confirm": true,
+    "no_candidate_promote": true,
+    "no_memory_statistics_update": true
+  },
+  "runtime_gap_check": {
+    "status": "WARN",
+    "code": "SYS-101",
+    "name": "DATA_GAP_BEFORE_START",
+    "reason": "runtime stopped before start",
+    "last_runtime_time": "2026-06-04T23:11:24",
+    "gap_minutes": 556.18,
+    "action": "BACKFILL_OR_REVIEW_RECOMMENDED"
+  },
+  "memory_check": {
+    "status": "OK",
+    "memory_api": {
+      "name": "LATS_P3_MEMORY_API",
+      "version": "v2",
+      "status": "OK",
+      "scope": "memory_brain_only"
+    },
+    "health": {
+      "total_memory": 8,
+      "confirmed": 5,
+      "candidate": 2,
+      "missing_examples": 1,
+      "duplicate_ids": 0,
+      "status": "OK"
+    },
+    "candidate_stats": {
+      "status": "OK",
+      "file": "/home/tong/LATS_PRODUCTION_P3_TEST/memory_brain/data/candidates/candidate_index.json",
+      "total_candidates": 0,
+      "waiting_confirm": 0,
+      "confirmed": 0,
+      "rejected": 0,
+      "updated_at": "2026-06-05T08:27:34"
+    },
+    "read_only": true
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "schema": "lats_p3_recheck_report_v3",
+  "created_at": "2026-06-05T09:20:45",
+  "final_status": "FAIL",
+  "blockers": [
+    "SIGNAL_RESULT_GAP_DETECTED"
+  ],
+  "rules": {
+    "memory_read_only": true,
+    "no_hit_count_update": true,
+    "no_candidate_confirm": true,
+    "no_candidate_promote": true,
+    "no_memory_statistics_update": true,
+    "real_backfill_enabled": false,
+    "run_blocked_on_signal_result_gap": true
+  },
+  "runtime_gap_check": {
+    "status": "OK",
+    "code": "",
+    "name": "NO_RUNTIME_GAP",
+    "reason": "runtime gap within limit",
+    "last_runtime_time": "2026-06-05T08:27:52",
+    "gap_minutes": 52.9,
+    "action": "PASS"
+  },
+  "storage_paths": {
+    "raw_database": {
+      "exists": true,
+      "file_count": 3,
+      "latest_file": "/home/tong/LATS_PRODUCTION_P3_TEST/raw_database/snapshots/latest_snapshot.json",
+      "latest_modified": "2026-06-04T00:15:51"
+    },
+    "live_data": {
+      "exists": true,
+      "file_count": 2,
+      "latest_file": "/home/tong/LATS_PRODUCTION_P3_TEST/data/result_data.csv",
+      "latest_modified": "2026-05-26T23:18:04"
+    },
+    "memory_data": {
+      "exists": true,
+      "file_count": 18,
+      "latest_file": "/home/tong/LATS_PRODUCTION_P3_TEST/memory_brain/data/memory_index.json",
+      "latest_modified": "2026-06-05T08:27:52"
+    },
+    "candidate_data": {
+      "exists": true,
+      "file_count": 2,
+      "latest_file": "/home/tong/LATS_PRODUCTION_P3_TEST/memory_brain/data/candidates/candidate_index.json",
+      "latest_modified": "2026-06-05T07:05:18"
+    },
+    "runtime_logs": {
+      "exists": true,
+      "file_count": 2,
+      "latest_file": "/home/tong/LATS_PRODUCTION_P3_TEST/logs/memory_runtime/memory_runtime.log",
+      "latest_modified": "2026-06-05T08:27:52"
+    },
+    "memory_logs": {
+      "exists": true,
+      "file_count": 4,
+      "latest_file": "/home/tong/LATS_PRODUCTION_P3_TEST/logs/memory_brain/memory_decision.log",
+      "latest_modified": "2026-06-05T08:27:52"
+    }
+  },
+  "missing_checks": [
+    {
+      "name": "raw_database",
+      "status": "OK",
+      "reason": "files found",
+      "file_count": 3,
+      "latest_modified": "2026-06-04T00:15:51",
+      "action": "PASS"
+    },
+    {
+      "name": "live_data",
+      "status": "OK",
+      "reason": "files found",
+      "file_count": 2,
+      "latest_modified": "2026-05-26T23:18:04",
+      "action": "PASS"
+    },
+    {
+      "name": "memory_data",
+      "status": "OK",
+      "reason": "files found",
+      "file_count": 18,
+      "latest_modified": "2026-06-05T08:27:52",
+      "action": "PASS"
+    },
+    {
+      "name": "candidate_data",
+      "status": "OK",
+      "reason": "files found",
+      "file_count": 2,
+      "latest_modified": "2026-06-05T07:05:18",
+      "action": "PASS"
+    },
+    {
+      "name": "runtime_logs",
+      "status": "OK",
+      "reason": "files found",
+      "file_count": 2,
+      "latest_modified": "2026-06-05T08:27:52",
+      "action": "PASS"
+    },
+    {
+      "name": "memory_logs",
+      "status": "OK",
+      "reason": "files found",
+      "file_count": 4,
+      "latest_modified": "2026-06-05T08:27:52",
+      "action": "PASS"
+    }
+  ],
+  "signal_result_gap_check": {
+    "schema": "lats_p3_signal_result_gap_check_v1",
+    "created_at": "2026-06-05T09:20:45",
+    "status": "WARN",
+    "read_only": true,
+    "files": {
+      "signal_file": "/home/tong/LATS_PRODUCTION_P3_TEST/data/signal_data.csv",
+      "result_file": "/home/tong/LATS_PRODUCTION_P3_TEST/data/result_data.csv"
+    },
+    "signal_report": {
+      "label": "signal_data",
+      "total_rows": 9,
+      "clean_rows": 5,
+      "test_rows": 4,
+      "timed_rows": 5,
+      "duplicate_signal_id_count": 0,
+      "duplicate_signal_ids": [],
+      "gap_count": 1,
+      "largest_gap_minutes": 585.0,
+      "first_time_text": "2026-05-25 23:59:59",
+      "last_time_text": "2026-05-26 10:59:59",
+      "first_time_ms": 1779728399999,
+      "last_time_ms": 1779767999999,
+      "gaps": [
+        {
+          "from_signal_id": "BTCUSDT_15m_1779728399999",
+          "to_signal_id": "BTCUSDT_15m_1779763499999",
+          "from_time_ms": 1779728399999,
+          "to_time_ms": 1779763499999,
+          "from_time_text": "2026-05-25 23:59:59",
+          "to_time_text": "2026-05-26 09:44:59",
+          "gap_minutes": 585.0,
+          "expected_minutes": 15
+        }
+      ]
+    },
+    "result_report": {
+      "label": "result_data",
+      "total_rows": 9,
+      "clean_rows": 5,
+      "test_rows": 4,
+      "timed_rows": 5,
+      "duplicate_signal_id_count": 0,
+      "duplicate_signal_ids": [],
+      "gap_count": 1,
+      "largest_gap_minutes": 585.0,
+      "first_time_text": "",
+      "last_time_text": "",
+      "first_time_ms": 1779728399999,
+      "last_time_ms": 1779767999999,
+      "gaps": [
+        {
+          "from_signal_id": "BTCUSDT_15m_1779728399999",
+          "to_signal_id": "BTCUSDT_15m_1779763499999",
+          "from_time_ms": 1779728399999,
+          "to_time_ms": 1779763499999,
+          "from_time_text": "",
+          "to_time_text": "",
+          "gap_minutes": 585.0,
+          "expected_minutes": 15
+        }
+      ]
+    },
+    "link_report": {
+      "signal_count": 5,
+      "result_count": 5,
+      "missing_result_count": 0,
+      "result_without_signal_count": 0,
+      "missing_result_sample": [],
+      "result_without_signal_sample": []
+    },
+    "rules": {
+      "expected_interval_minutes": 15,
+      "gap_detect_over_minutes": 30,
+      "exclude_test_rows": true,
+      "memory_update": false
+    }
+  },
+  "memory_check": {
+    "status": "OK",
+    "memory_api": {
+      "name": "LATS_P3_MEMORY_API",
+      "version": "v2",
+      "status": "OK",
+      "scope": "memory_brain_only"
+    },
+    "health": {
+      "total_memory": 8,
+      "confirmed": 5,
+      "candidate": 2,
+      "missing_examples": 1,
+      "duplicate_ids": 0,
+      "status": "OK"
+    },
+    "candidate_stats": {
+      "status": "OK",
+      "file": "/home/tong/LATS_PRODUCTION_P3_TEST/memory_brain/data/candidates/candidate_index.json",
+      "total_candidates": 0,
+      "waiting_confirm": 0,
+      "confirmed": 0,
+      "rejected": 0,
+      "updated_at": "2026-06-05T09:20:45"
+    },
+    "read_only": true
+  },
+  "next_action": "RUN_BLOCKED_BACKFILL_REQUIRED"
+}
