@@ -83,6 +83,22 @@ STEPS = [
         "allow_fail": False,
     },
     {
+        "name": "BACKFILL_CANDIDATE_BUILDER",
+        "cmd": [
+            "python3",
+            str(ROOT / "runtime" / "recheck" / "repair" / "backfill_candidate_builder.py"),
+        ],
+        "allow_fail": False,
+    },
+    {
+        "name": "BACKFILL_CANDIDATE_DUPLICATE_CHECK",
+        "cmd": [
+            "python3",
+            str(ROOT / "runtime" / "recheck" / "repair" / "backfill_candidate_duplicate_check.py"),
+        ],
+        "allow_fail": False,
+    },
+    {
         "name": "RECOVERY_HISTORY",
         "cmd": [
             "python3",
