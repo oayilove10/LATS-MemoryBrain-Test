@@ -1,0 +1,21 @@
+LATS P3 NOC STRUCTURE PLAN
+
+monitor/
+├── network/
+├── server/
+├── database/
+├── application/
+├── security/
+├── alert/
+├── business/
+├── system/
+└── shared/
+
+RULE:
+logic/   = brain thinking
+data/    = data
+monitor/ = display / observer
+system/  = combined NOC view
+
+STATUS:
+NOC Structure V1 planned.

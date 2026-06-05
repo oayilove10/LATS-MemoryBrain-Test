@@ -1,0 +1,44 @@
+LATS P3 MEMORY INDEX UPSERT PASS
+
+PASSED:
+- Memory Index Router V4
+- Memory Upsert V3
+- Persistence Save / Load
+- Counter Accumulation
+- Example Merge
+- Duplicate Memory Prevention
+
+RULE:
+If memory_id exists
+→ update existing memory
+
+If memory_id not exists
+→ append new memory
+
+If examples exist
+→ merge examples without duplicate
+
+If hit_count / confirmed_count exist
+→ accumulate count
+
+LATEST PASS OUTPUT:
+MEM_FOUND_TEST
+hit_count = 3
+confirmed_count = 3
+example_count = 5
+
+examples:
+- CHAIN_FOUND_TEST_2
+- CHAIN_FOUND_TEST
+- CHAIN_FOUND_TEST_3
+- CHAIN_FOUND_TEST_4
+- CHAIN_FOUND_TEST_5
+
+CORE PRINCIPLE:
+เจอซ้ำ → นับเพิ่ม
+เจอใหม่ → สร้างใหม่
+Memory ไม่มั่นใจ → Raw Data ตรวจซ้ำ
+Raw Data ไม่เจอ → Candidate waiting_confirm
+
+STATUS:
+P3 Memory Index Upsert = PASS

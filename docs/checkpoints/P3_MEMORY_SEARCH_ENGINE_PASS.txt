@@ -1,0 +1,49 @@
+LATS P3 MEMORY SEARCH ENGINE PASS
+
+PASSED:
+- Memory Query V2
+- Confirmed-only query
+- Candidate excluded from trading query
+- Top memory results added to runtime_v2
+- Runtime shows top_memory_results
+
+LATEST RUNTIME OUTPUT:
+top_memory_results:
+1. MEM_FOUND_TEST
+   query_score = 100
+   hit_count = 3
+   confirmed_count = 3
+
+2. MEM_CHAIN_BTCUSDT_4H_BULL_CLOSE_15m_LONG_SIGNAL
+   query_score = 100
+   hit_count = 1
+   confirmed_count = 1
+
+3. MEM_RAW_TEST
+   query_score = 60
+   hit_count = 1
+   confirmed_count = 1
+
+CORE FLOW:
+Raw Data
+↓
+Event
+↓
+Chain
+↓
+Memory Index
+↓
+Memory Query
+↓
+Top Results
+↓
+Trading Brain
+↓
+Runtime Decision
+
+IMPORTANT:
+Memory is not Storage.
+Memory is Knowledge Index.
+Memory Query returns top related memories.
+Trading Brain should use confirmed memories first.
+Candidate remains waiting_confirm and is not used for trading decision.

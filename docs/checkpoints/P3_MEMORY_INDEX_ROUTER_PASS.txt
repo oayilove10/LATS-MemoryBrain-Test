@@ -1,0 +1,44 @@
+LATS P3 MEMORY INDEX ROUTER PASS
+
+RULE:
+Memory Found
+→ Use Memory
+
+Memory Not Found
+→ Check Raw Data
+
+Raw Data Found
+→ Confirm / Update Memory
+
+Raw Data Not Found
+→ Candidate / waiting_confirm
+
+PASSED FLOW:
+SNAPSHOT
+↓
+EVENT
+↓
+CHAIN
+↓
+TREND
+↓
+CYCLE
+↓
+MEMORY INDEX ROUTER
+↓
+TRADING BRAIN
+↓
+FINAL DECISION
+
+LATEST PASS OUTPUT:
+memory_source = memory
+memory_status = confirmed
+memory_score = 100
+trade_decision = ULTRA_STRONG_MATCH
+play_action = PLAY
+execution_mode = NORMAL_EXECUTION
+
+IMPORTANT:
+Memory = Knowledge Index
+Raw Data = Source of Truth
+Candidate = Waiting Confirm
