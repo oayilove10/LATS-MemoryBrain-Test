@@ -1,0 +1,22 @@
+{
+  "job_id": "REPAIR_20260605_100818_001",
+  "job_type": "SIGNAL_GAP_BACKFILL",
+  "status": "WAIT_BACKFILL",
+  "source": "signal_data",
+  "from_signal_id": "BTCUSDT_15m_1779728399999",
+  "to_signal_id": "BTCUSDT_15m_1779763499999",
+  "from_time_ms": 1779728399999,
+  "to_time_ms": 1779763499999,
+  "from_time_text": "2026-05-25 23:59:59",
+  "to_time_text": "2026-05-26 09:44:59",
+  "gap_minutes": 585.0,
+  "priority": "HIGH",
+  "duplicate_guard": true,
+  "memory_update": false,
+  "candidate_update": false,
+  "created_at": "2026-06-05T10:08:18",
+  "reason": "signal gap detected by recheck path",
+  "updated_at": "2026-06-05T21:25:45",
+  "seen_count": 4,
+  "dedup_action": "REUSED_EXISTING_JOB"
+}

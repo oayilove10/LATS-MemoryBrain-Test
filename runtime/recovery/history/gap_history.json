@@ -1,0 +1,36 @@
+[
+  {
+    "history_type": "GAP_HISTORY",
+    "source": "signal_data",
+    "gap_type": "SIGNAL_GAP",
+    "from_signal_id": "BTCUSDT_15m_1779728399999",
+    "to_signal_id": "BTCUSDT_15m_1779763499999",
+    "from_time_ms": 1779728399999,
+    "to_time_ms": 1779763499999,
+    "from_time_text": "2026-05-25 23:59:59",
+    "to_time_text": "2026-05-26 09:44:59",
+    "gap_minutes": 585.0,
+    "severity": "GAP_LARGE",
+    "detected_at": "2026-06-05T10:06:18",
+    "status": "WAIT_BACKFILL",
+    "reason": "UNKNOWN",
+    "memory_update": false
+  },
+  {
+    "history_type": "GAP_HISTORY",
+    "source": "result_data",
+    "gap_type": "RESULT_GAP",
+    "from_signal_id": "BTCUSDT_15m_1779728399999",
+    "to_signal_id": "BTCUSDT_15m_1779763499999",
+    "from_time_ms": 1779728399999,
+    "to_time_ms": 1779763499999,
+    "from_time_text": "",
+    "to_time_text": "",
+    "gap_minutes": 585.0,
+    "severity": "GAP_LARGE",
+    "detected_at": "2026-06-05T10:06:18",
+    "status": "WAIT_BACKFILL",
+    "reason": "UNKNOWN",
+    "memory_update": false
+  }
+]

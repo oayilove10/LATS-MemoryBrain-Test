@@ -1,0 +1,14 @@
+[
+  {
+    "event_type": "RUNTIME_STOP_CHECK",
+    "status": "WARN",
+    "reason": "RUNTIME_STOP_DETECTED",
+    "last_runtime_time": "2026-06-05T09:27:46",
+    "downtime_minutes": 708.94,
+    "severity": "DOWNTIME_LARGE",
+    "detected_at": "2026-06-05T21:16:42",
+    "memory_update": false,
+    "seen_count": 3,
+    "last_seen_at": "2026-06-05T21:25:45"
+  }
+]

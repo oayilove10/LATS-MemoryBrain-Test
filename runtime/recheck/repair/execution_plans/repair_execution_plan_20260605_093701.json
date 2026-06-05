@@ -1,61 +1,69 @@
 {
-  "schema": "lats_p3_backfill_plan_v1",
-  "created_at": "2026-06-05T21:25:45",
-  "status": "READY_DRY_RUN",
+  "schema": "lats_p3_repair_execution_plan_v1",
+  "created_at": "2026-06-05T09:37:01",
+  "status": "READY_FOR_BACKFILL_DRY_RUN",
   "dry_run": true,
   "blockers": [],
   "summary": {
-    "queue_jobs": 2,
-    "waiting_backfill": 2,
-    "planned_tasks": 2,
-    "validation_status": "READY_FOR_BACKFILL"
+    "total_tasks": 2,
+    "total_expected_missing_rows": 76,
+    "critical_tasks": 0,
+    "large_tasks": 2
   },
   "rules": {
+    "read_only": true,
     "api_fetch_enabled": false,
     "write_signal_result_enabled": false,
     "memory_update": false,
     "hit_count_update": false,
     "candidate_confirm": false,
     "candidate_promote": false,
-    "duplicate_guard_required": true,
-    "row_level_duplicate_check_required": true
+    "duplicate_guard_required": true
   },
   "tasks": [
     {
-      "job_id": "REPAIR_20260605_100818_001",
+      "job_id": "REPAIR_20260605_093017_001",
       "job_type": "SIGNAL_GAP_BACKFILL",
-      "status": "DRY_RUN_PLANNED",
-      "source": "signal_data",
+      "status": "READY_FOR_FETCH_DRY_RUN",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
       "from_time_ms": 1779728399999,
       "to_time_ms": 1779763499999,
       "from_time_text": "2026-05-25 23:59:59",
       "to_time_text": "2026-05-26 09:44:59",
       "gap_minutes": 585.0,
+      "gap_severity": "GAP_LARGE",
+      "expected_missing_rows": 38,
+      "priority": "HIGH",
       "duplicate_guard_required": true,
       "row_level_duplicate_check_required": true,
+      "api_fetch_enabled": false,
+      "write_enabled": false,
       "memory_update": false,
       "candidate_update": false,
-      "write_enabled": false,
-      "api_fetch_enabled": false,
-      "planned_action": "FETCH_MISSING_ROWS_DRY_RUN_ONLY"
+      "next_step": "WAIT_REAL_BACKFILL_ENGINE"
     },
     {
-      "job_id": "REPAIR_20260605_100818_002",
+      "job_id": "REPAIR_20260605_093017_002",
       "job_type": "RESULT_GAP_BACKFILL",
-      "status": "DRY_RUN_PLANNED",
-      "source": "result_data",
+      "status": "READY_FOR_FETCH_DRY_RUN",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
       "from_time_ms": 1779728399999,
       "to_time_ms": 1779763499999,
       "from_time_text": "",
       "to_time_text": "",
       "gap_minutes": 585.0,
+      "gap_severity": "GAP_LARGE",
+      "expected_missing_rows": 38,
+      "priority": "HIGH",
       "duplicate_guard_required": true,
       "row_level_duplicate_check_required": true,
+      "api_fetch_enabled": false,
+      "write_enabled": false,
       "memory_update": false,
       "candidate_update": false,
-      "write_enabled": false,
-      "api_fetch_enabled": false,
-      "planned_action": "FETCH_MISSING_ROWS_DRY_RUN_ONLY"
+      "next_step": "WAIT_REAL_BACKFILL_ENGINE"
     }
   ]
 }

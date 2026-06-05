@@ -54,15 +54,34 @@ def save_json(path, data):
     )
 
 
+def normalize_to_next_open_time(ms):
+    """
+    Convert close-time style xxx999 to next candle open-time style xxx000.
+    Example:
+    1779728399999 -> next 15m open -> 1779729300000
+    """
+    ms = int(ms or 0)
+    return ((ms // INTERVAL_MS) + 1) * INTERVAL_MS
+
+
+def normalize_to_open_time(ms):
+    """
+    Convert any timestamp to its candle open-time boundary.
+    """
+    ms = int(ms or 0)
+    return (ms // INTERVAL_MS) * INTERVAL_MS
+
+
 def build_missing_timestamps(task):
     start = int(task.get("from_time_ms") or 0)
     end = int(task.get("to_time_ms") or 0)
 
     timestamps = []
 
-    current = start + INTERVAL_MS
+    current = normalize_to_next_open_time(start)
+    end_open = normalize_to_open_time(end)
 
-    while current < end:
+    while current < end_open:
         timestamps.append(current)
         current += INTERVAL_MS
 

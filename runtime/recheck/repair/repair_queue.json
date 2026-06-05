@@ -1,22 +1,26 @@
 {
-  "schema": "lats_p3_repair_queue_v1",
-  "created_at": "2026-06-05T09:20:45",
+  "schema": "lats_p3_repair_queue_v2",
+  "created_at": "2026-06-05T21:25:45",
+  "updated_at": "2026-06-05T21:25:45",
   "source_report": "/home/tong/LATS_PRODUCTION_P3_TEST/runtime/recheck/reports/latest_recheck_report.json",
   "recheck_status": "FAIL",
   "next_action": "RUN_BLOCKED_BACKFILL_REQUIRED",
   "total_jobs": 2,
   "waiting_backfill": 2,
+  "created_count": 0,
+  "reused_count": 2,
   "rules": {
     "memory_read_only": true,
     "no_hit_count_update": true,
     "no_candidate_confirm": true,
     "no_candidate_promote": true,
     "duplicate_guard_required": true,
+    "job_dedup_enabled": true,
     "backfill_execution_enabled": false
   },
   "jobs": [
     {
-      "job_id": "REPAIR_20260605_092045_001",
+      "job_id": "REPAIR_20260605_100818_001",
       "job_type": "SIGNAL_GAP_BACKFILL",
       "status": "WAIT_BACKFILL",
       "source": "signal_data",
@@ -31,11 +35,14 @@
       "duplicate_guard": true,
       "memory_update": false,
       "candidate_update": false,
-      "created_at": "2026-06-05T09:20:45",
-      "reason": "signal gap detected by recheck path"
+      "created_at": "2026-06-05T10:08:18",
+      "reason": "signal gap detected by recheck path",
+      "updated_at": "2026-06-05T21:25:45",
+      "seen_count": 4,
+      "dedup_action": "REUSED_EXISTING_JOB"
     },
     {
-      "job_id": "REPAIR_20260605_092045_002",
+      "job_id": "REPAIR_20260605_100818_002",
       "job_type": "RESULT_GAP_BACKFILL",
       "status": "WAIT_BACKFILL",
       "source": "result_data",
@@ -50,8 +57,11 @@
       "duplicate_guard": true,
       "memory_update": false,
       "candidate_update": false,
-      "created_at": "2026-06-05T09:20:45",
-      "reason": "result gap detected by recheck path"
+      "created_at": "2026-06-05T10:08:18",
+      "reason": "result gap detected by recheck path",
+      "updated_at": "2026-06-05T21:25:45",
+      "seen_count": 4,
+      "dedup_action": "REUSED_EXISTING_JOB"
     }
   ]
 }

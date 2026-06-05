@@ -1,0 +1,48 @@
+{
+  "schema": "lats_p3_backfill_fetch_result_validator_v1",
+  "created_at": "2026-06-05T22:07:28",
+  "status": "READY_FOR_WRITE_TEST",
+  "blockers": [],
+  "read_only": true,
+  "write_enabled": false,
+  "memory_update": false,
+  "summary": {
+    "validated_groups": 2,
+    "failed_groups": 0,
+    "total_expected_rows": 76,
+    "total_fetched_rows": 76,
+    "total_missing": 0,
+    "total_extra": 0
+  },
+  "results": [
+    {
+      "job_id": "REPAIR_20260605_100818_001",
+      "job_type": "SIGNAL_GAP_BACKFILL",
+      "status": "PASS",
+      "expected_rows": 38,
+      "fetched_rows": 38,
+      "missing_count": 0,
+      "extra_count": 0,
+      "missing_timestamps": [],
+      "extra_timestamps": [],
+      "write_allowed": true
+    },
+    {
+      "job_id": "REPAIR_20260605_100818_002",
+      "job_type": "RESULT_GAP_BACKFILL",
+      "status": "PASS",
+      "expected_rows": 38,
+      "fetched_rows": 38,
+      "missing_count": 0,
+      "extra_count": 0,
+      "missing_timestamps": [],
+      "extra_timestamps": [],
+      "write_allowed": true
+    }
+  ],
+  "rules": {
+    "write_signal_result_enabled": false,
+    "memory_update": false,
+    "block_write_on_mismatch": true
+  }
+}
