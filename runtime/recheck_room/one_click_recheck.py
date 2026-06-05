@@ -27,6 +27,14 @@ ROOT = Path.home() / "LATS_PRODUCTION_P3_TEST"
 
 STEPS = [
     {
+        "name": "RUNTIME_STOP_DETECTOR",
+        "cmd": [
+            "python3",
+            str(ROOT / "runtime" / "recovery" / "detectors" / "runtime_stop_detector.py"),
+        ],
+        "allow_fail": True,
+    },
+    {
         "name": "RECHECK_PATH",
         "cmd": [
             "python3",
@@ -71,6 +79,14 @@ STEPS = [
         "cmd": [
             "python3",
             str(ROOT / "runtime" / "recheck" / "repair" / "repair_execution_plan.py"),
+        ],
+        "allow_fail": False,
+    },
+    {
+        "name": "RECOVERY_HISTORY",
+        "cmd": [
+            "python3",
+            str(ROOT / "runtime" / "recovery" / "history" / "recovery_history.py"),
         ],
         "allow_fail": False,
     },
