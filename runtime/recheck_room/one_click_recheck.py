@@ -66,6 +66,14 @@ STEPS = [
         ],
         "allow_fail": False,
     },
+    {
+        "name": "REPAIR_EXECUTION_PLAN",
+        "cmd": [
+            "python3",
+            str(ROOT / "runtime" / "recheck" / "repair" / "repair_execution_plan.py"),
+        ],
+        "allow_fail": False,
+    },
 ]
 
 
